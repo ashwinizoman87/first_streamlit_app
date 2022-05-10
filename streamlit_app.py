@@ -22,7 +22,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 #streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries'])
 
 #We'll ask our app to put the list of selected fruits into a variable called fruits_selected.
-fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado','Strawberries']) #after removing ['Avocado','Strawberries]
+fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['banana','Strawberries']) #after removing ['Avocado','Strawberries]
 #fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 #Then, we'll ask our app to use the fruits in our fruits_selected list to pull rows from the full data set
@@ -35,7 +35,7 @@ streamlit.dataframe(fruits_to_show)
 #streamlit.dataframe(my_fruit_list)
 
 streamlit.header('Fruityvice Fruit Advice')
-fruit_choice = streamlit.text_input('what fruit would you like information about?', 'kiwi')
+fruit_choice = streamlit.text_input('what fruit would you like information about?', 'banana')
 streamlit.write('The user entered', fruit_choice)
 
 import requests
@@ -56,6 +56,6 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit_load_list contains:")
 streamlit.dataframe(my_data_rows)
 
-add_fruit_list = streamlit.text_input('what fruit would you like information about?', 'jackfruit')
+add_fruit_list = streamlit.text_input('what fruit would you like information about?', 'banana')
 streamlit.write('Thanks for adding', add_fruit_list)
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
