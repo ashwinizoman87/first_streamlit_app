@@ -51,7 +51,7 @@ except URLError as e:
     
 #streamlit.write('The user entered', fruit_choice)  #take the json version of the response and normalize it
 
-streamlit.header("The fruit_load_list contains:")
+streamlit.header("View Our Fruit List - Add Your Favourites")
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
     my_cur.execute("SELECT * from fruit_load_list")
