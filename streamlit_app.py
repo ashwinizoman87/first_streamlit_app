@@ -34,11 +34,7 @@ streamlit.dataframe(fruits_to_show)
 #display fruit table on page
 #streamlit.dataframe(my_fruit_list)
 
-
 streamlit.header('Fruityvice Fruit Advice')
-
-
-
 fruit_choice = streamlit.text_input('what fruit would you like information about?', 'kiwi')
 streamlit.write('The user entered', fruit_choice)
 
@@ -62,3 +58,4 @@ streamlit.dataframe(my_data_rows)
 
 add_fruit_list = streamlit.text_input('what fruit would you like information about?', 'jackfruit')
 streamlit.write('Thanks for adding', add_fruit_list)
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
